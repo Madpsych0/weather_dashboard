@@ -13,50 +13,60 @@ A Django web app to view current, forecast, and historical weather data using We
 
 ## Setup
 
-1. **Clone the repository:**
-   ```
-   git clone repo
-   cd weather-dashboard
-   ```
+## 1. Clone the Repository
 
-2. **Install dependencies:**
-   ```
-   python -m venv venv
-   venv\Scripts\activate   # On Windows
-   pip install -r requirements.txt
-   ```
+```bash
+git clone <your-repo-url>
+cd weather-dashboard
+```
 
-3. **Configure environment variables:**
-   - Copy `.env.example` to `.env` and add your WeatherAPI key:
-     ```
-     cp .env.example .env
-     ```
-     Edit `.env` and set `WEATHER_API_KEY`.
+## 2. Create & Activate Virtual Environment
 
-   - **Add your Django secret key to `.env`:**
-     ```
-     DJANGO_SECRET_KEY=your-secret-key-here
-     ```
-     Replace `your-secret-key-here` with a secure, random string.
+### Windows
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+### macOS / Linux
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-   - **Apply the secret key in your Django settings:**
-     In `weather_project/settings.py`, load the secret key from the environment:
-     ```python
-     SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
-     ```
+## 3. Install Dependencies
 
-4. **Apply migrations:**
-   ```
-   python manage.py migrate
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-5. **Run the development server:**
-   ```
-   python manage.py runserver
-   ```
+### 4. Create `.env` File
 
-6. **Access the app:**
-   - Open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your browser.
+Create a `filename.env` in the directory.
+Open `.env` in a text editor and set the following values:
+
+```env
+WEATHER_API_KEY=your_weather_api_key_here
+DJANGO_SECRET_KEY=your_secret_key_here
+```
+
+- **WEATHER_API_KEY** → Obtain from your weather API provider.
+- **DJANGO_SECRET_KEY** → Generate a long random string (at least 32 characters).
+
+## 5. Apply Database Migrations
+
+```bash
+python manage.py migrate
+```
+
+## 6. Run the Development Server
+
+```bash
+python manage.py runserver
+```
+
+## Notes
+
+- Ensure Python 3.10+ is installed.
 
 ## Notes
 - You need a free API key from [WeatherAPI.com](https://www.weatherapi.com/).
