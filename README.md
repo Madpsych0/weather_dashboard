@@ -71,6 +71,8 @@ python manage.py runserver
 
 - [@Madpsycho](https://www.github.com/Madpsych0)
 - [@theaxlee](https://www.github.com/theaxlee)
+- [@Scaria6](https://www.github.com/Scaria6)
+
 
 ## License
 
